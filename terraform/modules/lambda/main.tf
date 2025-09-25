@@ -20,8 +20,8 @@ module "lambda" {
   s3_bucket        = local.s3_bucket
   s3_key           = local.s3_key
   policy           = data.aws_iam_policy_document.lambda.json
-  handler          = "main"
-  runtime          = "go1.x"
+  handler          = var.handler
+  runtime          = var.runtime
 
   environment = {
     SECRETS_MANAGER_TOKEN_PATH          = "/${var.secrets_manager_prefix}/{{.Team}}/{{.Owner}}-access-token"
