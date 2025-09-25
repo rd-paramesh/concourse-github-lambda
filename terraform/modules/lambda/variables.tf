@@ -68,3 +68,15 @@ variable "tags" {
   default     = {}
 }
 
+variable "runtime" {
+  description = "Lambda runtime environment"
+  type        = string
+  default     = "provided.al2023"
+}
+
+variable "handler" {
+  description = "Lambda function entry point"
+  type        = string
+  default     = "bootstrap"
+}
+
